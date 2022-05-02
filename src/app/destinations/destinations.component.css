@@ -1,0 +1,13 @@
+main {
+    padding: 5px;
+}
+
+hr {
+  background-color: orange;
+  width: 300px;
+}
+
+agm-map {
+  height: 610px;
+  width: 1570px;
+}

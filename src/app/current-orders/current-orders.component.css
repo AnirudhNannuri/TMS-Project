@@ -1,0 +1,13 @@
+div.list {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+hr {
+    background-color: orange;
+    width: 200px;
+}

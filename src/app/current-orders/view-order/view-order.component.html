@@ -1,0 +1,61 @@
+<h1>Order Details</h1>
+
+<div *ngIf="currentOrder" class="edit-form">
+
+    <form>
+
+        <div class="form-group">
+            <label for="name"> <b>Name</b> </label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="currentOrder.name" name="name" />
+        </div>
+
+        <div class="form-group">
+            <label for="from"> <b>From</b> </label>
+            <input type="text" class="form-control" id="from" [(ngModel)]="currentOrder.from" name="from" />
+        </div>
+
+        <div class="form-group">
+            <label for="destination"> <b>Destination</b> </label>
+            <input type="text" class="form-control" id="destination" [(ngModel)]="currentOrder.destination" name="destination" />
+        </div>
+
+        <div class="form-group">
+            <label for="service"> <b>Service</b> </label>
+            <input type="text" class="form-control" id="service" [(ngModel)]="currentOrder.service" name="service" />
+        </div>
+
+        <div class="form-group">
+            <label><strong>Status:</strong></label> {{ currentOrder.placed ? "Placed" : "Pending" }}
+        </div>
+
+    </form>
+
+    <button class="btn btn-primary btn-sm mr-2" *ngIf="currentOrder.placed" (click)="updatePlaced(false)">
+    Remove
+  </button>
+
+    <button *ngIf="!currentOrder.placed" class="btn btn-primary btn-sm mr-2" (click)="updatePlaced(true)">
+    Place
+  </button>
+
+    <button class="btn btn-danger btn-sm mr-2" (click)="deleteOrder()">
+    Delete
+  </button>
+
+    <button type="submit" class="btn btn-success btn-sm" (click)="updateOrder()">
+    Update
+  </button>
+
+    <br>
+    <br>
+
+    <p>{{ message }}</p>
+
+</div>
+
+<div *ngIf="!currentOrder">
+
+    <br/>
+    <p>Cannot access this Order. </p>
+
+</div>

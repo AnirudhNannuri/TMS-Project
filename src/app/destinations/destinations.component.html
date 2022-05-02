@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="main-box" col-lg-12>
+
+        <header>
+            <app-header></app-header>
+        </header>
+
+        <main>
+            <h1>Destinations</h1>
+            <hr align="left">
+            <p>We provide logistics services to more than 2000 locations in India. Here is the glimpse of the locations:</p>
+        </main>
+    </section>
+
+    <agm-map class="container-fluid d-flex justify-content-center align-items-center" [latitude]="lat" [longitude]="long">
+      <div *ngFor="let item of placeList">
+        <agm-marker [latitude]="item.lat" [longitude]="item.lng"></agm-marker>
+      </div>
+    </agm-map>
+</body>
+
+</html>

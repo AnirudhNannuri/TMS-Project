@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+</head>
+
+<body>
+
+    <section class="container-fluid px-0">
+
+        <header id="header">
+            <app-header></app-header>
+        </header>
+
+        <section class="pic-section"></section>
+
+        <main class="w-100">
+
+                <div class="container-fluid w-100 padding">
+                    <h2 class="line_bottom">Orders</h2>
+
+                    <br>
+                    <br>
+
+                    <h6 class="description">
+                        To place an order, please fill in all the required details.
+                    </h6>
+
+                    <hr>
+                    <br>
+
+                    <form [formGroup]="orderForm" (ngSubmit)="saveOrder()">
+                        <div class="row">
+                            <div class="col-6">
+
+                                <div *ngIf="!submitted">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            <label> <b>Name</b> </label>
+                                            <input type="text" formControlName="name" class="form-control" required>
+                                            <p *ngIf="name.touched && name.invalid" class="error">
+                                                <sup>*</sup>Please enter Name.
+                                            </p>
+                                            <p *ngIf="name.errors?.['minlength']" class="error">
+                                                <sup>*</sup>Name should not be less than three characters.
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 mb-3">
+
+                                            <label> <b>From</b> </label>
+                                            <input type="text" formControlName="from" class="form-control" required>
+                                            <p *ngIf="from.touched && from.invalid" class="error">
+                                                <sup>*</sup>Please enter the starting address.
+                                            </p>
+
+                                            <label> <b>Destination</b> </label>
+                                            <input type="text" formControlName="destination" class="form-control" required>
+                                            <p *ngIf="destination.touched && destination.invalid" class="error">
+                                                <sup>*</sup>Please enter the destination address.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 mb-3">
+
+                                            <label> <b>Content</b> </label>
+                                            <input type="text" formControlName="content" class="form-control" required>
+                                            <p *ngIf="content.touched && content.invalid" class="error">
+                                                <sup>*</sup>Please add the content description.
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-6">
+                              <div>
+
+                                <label> <b>Services</b> </label>
+                                <div class="radio" *ngFor="let service of services">
+
+                                  <label>
+                                    <input type="radio" formControlName="service" [value]="service">
+                                    {{ service }}
+                                  </label>
+
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                          <button class="btn btn-success" (click)="saveOrder()">Submit</button>
+
+                          <div *ngIf="submitted">
+                            <h4>Order placed!</h4>
+                            <button class="btn btn-success" (click)="newOrder()">New Order</button>
+                          </div>
+                        </div>
+                    </form>
+
+                    <!-- <div class="submit-form">
+                    <div *ngIf="!submitted">
+
+                        <div class="form-group">
+                            <label for="name"><b>Name</b></label>
+                            <input type="text" class="form-control" id="name" required [(ngModel)]="order.name" name="name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name"><b>Destination</b></label>
+                            <input type="text" class="form-control" id="destination" required [(ngModel)]="order.destination" name="destination">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name"><b>Content</b></label>
+                            <input type="text" class="form-control" id="content" required [(ngModel)]="order.content" name="content">
+                        </div>
+
+                        <div class="form-group">
+                            <label for=""><b>Select a service: </b></label>
+                            <div class="radio" *ngFor="let i of services">
+                            <div class="radio">
+                                <label class="radio-inline">
+                                  <input type="radio" formControlName="service" [value]="i"> {{ i }}
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" formControlName="service" value="fullTruck" [(ngModel)]="order.service"> Full Truck Load
+                                </label>
+                                <br>
+                                <label class="radio-inline">
+                                  <input type="radio" formControlName="service" value="air" [(ngModel)]="order.service"> Air Cargo
+                                </label>
+                                <br>
+                                <label class="radio-inline">
+                                  <input type="radio" formControlName="service" value="rail" [(ngModel)]="order.service"> Rail
+                                </label>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-success" (click)="saveOrder()">Submit</button>
+
+                    </div>
+
+                    <div *ngIf="submitted">
+                        <h4>Order placed!</h4>
+                        <button class="btn btn-success" (click)="newOrder()">New Order</button>
+                    </div>
+
+                </div> -->
+
+                </div>
+        </main>
+
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+/* .body {
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+} */
+
+.whole-bg {
+  background-image: url(../../assets/images/img3.jpg);
+  background-position: center;
+  background-size: 100%;
+  height: 100vh;
+}
+
+.big-card-bg {
+  background-color: #f1f1f1;
+  overflow: hidden;
+  height: 500px;
+  border-radius: 20px;
+  max-width: 1000px;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+label {
+    font-weight: bold;
+    align-items: center;
+}
+
+button.btn {
+  height: 40px;
+  width: 100px;
+  background-color: #008ae6;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.login-input {
+  border: 2px solid #00000030;
+  background-color: transparent;
+  border-radius: 8px;
+  line-height: 44px;
+  width: 100%;
+  /* padding-left: 42px; */
+}
+
+.pad-col {
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.col-img {
+  background-image: url(../../assets/images/img6.jpg);
+  background-size: 800px;
+  background-position: -85px;
+}
+
+.logo {
+  background-size: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+.mainHeading {
+  padding-left: 10px;
+}
+
+

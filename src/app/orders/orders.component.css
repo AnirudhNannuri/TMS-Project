@@ -1,0 +1,32 @@
+.line_bottom {
+    display: inline;
+    border-bottom: 3px solid orange;
+}
+
+input.ng-touched {
+    border: 1px solid red;
+}
+
+input.ng-valid {
+    border: 2px solid green;
+}
+
+hr {
+    background-color: orange;
+}
+
+main {
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.padding {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+button {
+  margin-top: 20px;
+  width: 150px;
+  height: 45px;
+}
