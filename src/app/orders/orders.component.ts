@@ -4,6 +4,8 @@ import { ToastrService } from 'ngx-toastr';
 import { OrderService } from '../shared/order.service';
 import { OrdersModel } from '../shared/orders.model';
 
+import {MatInputModule} from '@angular/material/input'
+
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
@@ -27,8 +29,8 @@ export class OrdersComponent implements OnInit {
   ordersForm() {
     this.orderForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
-      from: ['', Validators.required],
-      destination: ['', Validators.required],
+      from: ['', [Validators.required]],
+      destination: ['', [Validators.required]],
       content: ['', Validators.required],
       service: ('Full Truck Load')
     });

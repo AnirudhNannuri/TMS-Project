@@ -1,10 +1,12 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 .line_bottom {
     display: inline;
     border-bottom: 3px solid orange;
 }
 
 input.ng-touched {
-    border: 1px solid red;
+    border: 2px solid red;
 }
 
 input.ng-valid {
@@ -29,4 +31,28 @@ button {
   margin-top: 20px;
   width: 150px;
   height: 45px;
+}
+
+.inputField {
+  width: 400px;
+}
+
+.inputTwo {
+  float: right;
+}
+
+.float-container {
+  border: 3px solid #3C98E5;
+  padding: 20px;
+}
+
+.float-child {
+  width: 50%;
+  float: left;
+  padding: 20px;
+}
+
+.description {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: medium;
 }

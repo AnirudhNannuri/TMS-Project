@@ -27,6 +27,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AgmCoreModule } from '@agm/core'
 
+import { MatInputModule } from '@angular/material/input';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +60,7 @@ import { AgmCoreModule } from '@agm/core'
       apiKey: "AIzaSyDJmWXOB1GZcINnF_dj8XTF80xGrQUd2Nk"
     }),
     HttpModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
