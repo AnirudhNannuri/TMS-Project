@@ -28,6 +28,24 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AgmCoreModule } from '@agm/core'
 
 import { MatInputModule } from '@angular/material/input';
+import {MatSliderModule} from '@angular/material/slider';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+
+
+import { DataService } from './data.service';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +58,8 @@ import { MatInputModule } from '@angular/material/input';
     OrdersComponent,
     LoadingSpinnerComponent,
     DropdownDirective,
-    HomeComponent
+    HomeComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
@@ -60,9 +79,25 @@ import { MatInputModule } from '@angular/material/input';
       apiKey: "AIzaSyDJmWXOB1GZcINnF_dj8XTF80xGrQUd2Nk"
     }),
     HttpModule,
-    MatInputModule
+    MatInputModule,
+    MatSliderModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatAutocompleteModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
