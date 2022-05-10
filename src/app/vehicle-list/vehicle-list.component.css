@@ -1,0 +1,26 @@
+.container-fluid {
+  width: 95%;
+  margin-top: 20px;
+}
+.sidenav-container {
+  height: 100%;
+}
+
+.onHover:hover {
+  background: #2da3f1 !important;
+}
+
+mat-panel-title {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-right: 12px;
+}
+
+.headers-align .mat-expansion-panel-header-title,
+.headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}

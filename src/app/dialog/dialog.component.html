@@ -1,0 +1,50 @@
+<div mat-dialog-content>
+  <h3>Please enter the following details:</h3>
+  <div class="container-fluid justify-content-center align-items-center">
+
+    <form [formGroup]="vehicleForm" (ngSubmit)="saveVehicle()">
+      <div class="row">
+        <div class="col-12 fields">
+          <mat-form-field appearance="fill">
+            <mat-label>Vehicle number</mat-label>
+            <input matInput formControlName="vehicleNumber" required>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 fields">
+          <mat-form-field appearance="fill">
+            <mat-label>Chassis number</mat-label>
+            <input matInput formControlName="chassisNumber" required>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 fields">
+          <mat-form-field appearance="fill">
+            <mat-label>Model number</mat-label>
+            <mat-select formControlName="modelNumber" (valueChange)="typeOptions($event)" required>
+              <mat-option *ngFor="let s of Model" [value]="s?.id">{{ s?.name }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 fields">
+          <mat-form-field appearance="fill">
+            <mat-label>Vehicle type</mat-label>
+            <mat-select formControlName="vehicleType" required>
+              <mat-option *ngFor="let c of typeDropdown" [value]="c?.name">{{ c?.name }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <button [disabled]="vehicleForm.invalid" class="btn btn-success" (click)="saveVehicle()"
+          mat-dialog-close="">Submit</button>
+      </div>
+    </form>
+
+  </div>
+</div>

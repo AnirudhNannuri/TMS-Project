@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { debounceTime, distinctUntilChanged, fromEvent, map, switchMap } from 'rxjs';
 import { Address } from '../address';
-import { DataService } from '../data.service';
+import { DataService } from '../shared/data.service';
 import placeData from '../in.json';
 
 @Component({

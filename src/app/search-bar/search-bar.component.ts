@@ -2,7 +2,7 @@
 import { Component, OnInit, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { DataService } from '../data.service';
+import { DataService } from '../shared/data.service';
 import { Address } from '../address';
 
 @Component({

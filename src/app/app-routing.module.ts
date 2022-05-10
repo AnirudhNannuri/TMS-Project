@@ -9,6 +9,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { ViewOrderComponent } from './current-orders/view-order/view-order.component';
 import { AuthGuard } from './auth/auth.guard';
 import { HomeComponent } from './home/home.component';
+import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
     path: 'view-order',
     component: ViewOrderComponent
   },
+  {
+    path: 'vehicle-list',
+    component: VehicleListComponent
+  }
 ];
 
 @NgModule({

@@ -41,11 +41,17 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
-import { DataService } from './data.service';
+import { DataService } from './shared/data.service';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +65,9 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     LoadingSpinnerComponent,
     DropdownDirective,
     HomeComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    DialogComponent,
+    VehicleListComponent
   ],
   imports: [
     BrowserModule,
@@ -93,7 +101,11 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     MatAutocompleteModule,
     MatChipsModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
+    MatDialogModule,
+    MatTableModule,
+    MatExpansionModule
   ],
   providers: [
     DataService
