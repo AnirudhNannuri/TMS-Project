@@ -7,12 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  currentImg;
   constructor() { }
 
   ngOnInit(): void {
+    this.changeBG();
   }
 
-  image = document.getElementById('image');
-  images = ['../../assets/images/bg-img2.jpg','../../assets/images/img3.jpg', '../../assets/images/img4.jpg'];
+
+  images = ['bg-img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg'];
+
+  delay() {
+    return new Promise(resolve => {
+      setTimeout(resolve, 1700);
+    });
+  }
+  async changeBG(){
+    while(true)
+    {
+      for(var bg in this.images)
+      {
+        this.currentImg= this.images[bg];
+        await this.delay();
+      }
+    }
+  }
 
 }

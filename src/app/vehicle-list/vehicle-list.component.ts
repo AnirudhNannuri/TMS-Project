@@ -39,6 +39,14 @@ export class VehicleListComponent implements OnInit{
     });
   }
 
+  openUpdateDialog(vehicle): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '500px',
+      height: '500px',
+      data: vehicle
+    });
+  }
+
   refreshList() {
     this.currentVehicle = undefined;
     this.currentIndex = -1;

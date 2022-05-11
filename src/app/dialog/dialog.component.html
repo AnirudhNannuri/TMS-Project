@@ -39,6 +39,30 @@
           </mat-form-field>
         </div>
       </div>
+      <div class="row">
+        <div class="col-12 fields">
+          <mat-form-field appearance="fill">
+            <mat-label>From</mat-label>
+            <input matInput formControlName="from" required>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 fields">
+          <mat-form-field appearance="fill">
+            <mat-label>Destination</mat-label>
+            <input matInput formControlName="destination" required>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 fields">
+          <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description" placeholder="Destination description..." required></textarea>
+          </mat-form-field>
+        </div>
+      </div>
 
       <div class="row justify-content-center">
         <button [disabled]="vehicleForm.invalid" class="btn btn-success" (click)="saveVehicle()"

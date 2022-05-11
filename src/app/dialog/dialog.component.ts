@@ -43,7 +43,10 @@ export class DialogComponent implements OnInit {
       vehicleNumber: new FormControl('', [Validators.required, Validators.minLength(3)]),
       chassisNumber: new FormControl('', [Validators.required, Validators.minLength(4)]),
       modelNumber: new FormControl('', Validators.required),
-      vehicleType: new FormControl('', Validators.required)
+      vehicleType: new FormControl('', Validators.required),
+      from: new FormControl('', Validators.required),
+      destination: new FormControl('', Validators.required),
+      description: new FormControl('', Validators.required)
     });
   }
 

@@ -17,6 +17,8 @@ export class AuthComponent {
   isLoading = false;
   isLoginMode = "LogIn";
   isSignupMode = "SignUp";
+  logIn = true;
+  signUp = false;
 
   images = [
     "../../images/bg-img1.jpg",
@@ -27,10 +29,7 @@ export class AuthComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  onSubmit(form: NgForm) {
-    if(!form.valid) {
-      return;
-    }
+  onLoginSubmit(form: NgForm) {
 
     const email = form.value.email;
     const password = form.value.password;
@@ -39,11 +38,7 @@ export class AuthComponent {
 
     this.isLoading = true;
 
-    if(this.isLoginMode) {
-      authObs = this.authService.logIn(email, password);
-    } else {
-      authObs = this.authService.signUp(email, password);
-    }
+    authObs = this.authService.logIn(email, password);
 
     authObs.subscribe(
       resData => {
@@ -58,5 +53,40 @@ export class AuthComponent {
       }
     );
     form.reset();
+  }
+
+  onSignupSubmit(form: NgForm) {
+    const email = form.value.email;
+    const password = form.value.password;
+
+    let authObs : Observable<AuthResponseData>
+
+    this.isLoading = true;
+
+      authObs = this.authService.signUp(email, password);
+
+    authObs.subscribe(
+      resData => {
+        console.log(resData);
+        this.isLoading = false;
+        this.router.navigate(['/home']);
+      },
+      errorMessage => {
+        console.log(errorMessage);
+        this.error = errorMessage;
+        this.isLoading = false;
+      }
+    );
+    form.reset();
+  }
+
+  loginButton() {
+    this.signUp = true;
+    this.logIn = false;
+  }
+
+  signupButton() {
+    this.signUp = false;
+    this.logIn = true;
   }
 }

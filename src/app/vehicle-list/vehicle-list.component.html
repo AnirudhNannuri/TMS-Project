@@ -1,61 +1,107 @@
-<app-header></app-header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicles</title>
+</head>
 
-<div class="container-fluid justify-content-center align-items-center">
+<body>
 
-<mat-accordion multi class="headers-align">
-  <div *ngFor="let vehicle of vehicles; let i = index">
-    <mat-expansion-panel hideToggle>
-      <mat-expansion-panel-header class="onHover">
-        <mat-panel-title>
-          <p> <b>{{ vehicle.vehicleNumber }}</b> </p>
-        </mat-panel-title>
-        <mat-panel-description>
-          This is a summary of the content
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <div class="col-md-6">
-        <h4>Chassis Number</h4>
-        <ul class="list-group">
-          <li class="list-group-item" [class.active]="i == currentIndex">
-            {{ vehicle.chassisNumber }}
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <h4>Model number</h4>
-        <ul class="list-group">
-          <li class="list-group-item" [class.active]="i == currentIndex">
-            {{ vehicle.modelNumber }}
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <h4>Vehicle Type</h4>
-        <ul class="list-group">
-          <li class="list-group-item" [class.active]="i == currentIndex">
-            {{ vehicle.vehicleType }}
-          </li>
-        </ul>
-      </div>
-      <mat-action-row>
-        <button mat-button color="primary">Update</button>
-        <button mat-button color="warn">Delete</button>
-      </mat-action-row>
-    </mat-expansion-panel>
-  </div>
-</mat-accordion>
+  <section class="container-fluid px-0">
+    <header>
+      <app-header></app-header>
+    </header>
 
-  <div class="justify-content-center align-items-center">
-    <section>
-      <h3>Add new shipment details?</h3>
-    </section>
-    <section>
-      <div class="row">
-        <div class="col-12">
-          <button class="dialogButton" mat-raised-button (click)="openDialog()">Add shipment</button>
+    <main>
+      <h1>Shipment Details:</h1>
+      <hr align="left">
+      <p>Add details of new shipment or assign a new shipment.</p>
+
+      <div class="container-fluid justify-content-center align-items-center">
+
+        <mat-accordion multi class="headers-align">
+          <div *ngFor="let vehicle of vehicles; let i = index">
+            <mat-expansion-panel hideToggle>
+              <mat-expansion-panel-header class="onHover">
+                <mat-panel-title>
+                  <p> <b>{{ vehicle.vehicleNumber }}</b> </p>
+                </mat-panel-title>
+                <mat-panel-description>
+                  {{ vehicle.description }}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="col-md-6">
+                <h4>Chassis Number</h4>
+                <ul class="list-group">
+                  <li class="list-group-item" [class.active]="i == currentIndex">
+                    {{ vehicle.chassisNumber }}
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h4>Model number</h4>
+                <ul class="list-group">
+                  <li class="list-group-item" [class.active]="i == currentIndex">
+                    {{ vehicle.modelNumber }}
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h4>Vehicle Type</h4>
+                <ul class="list-group">
+                  <li class="list-group-item" [class.active]="i == currentIndex">
+                    {{ vehicle.vehicleType }}
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h4>From</h4>
+                <ul class="list-group">
+                  <li class="list-group-item" [class.active]="i == currentIndex">
+                    {{ vehicle.from }}
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h4>Destination</h4>
+                <ul class="list-group">
+                  <li class="list-group-item" [class.active]="i == currentIndex">
+                    {{ vehicle.destination }}
+                  </li>
+                </ul>
+              </div>
+              <mat-action-row>
+                <button mat-button color="primary" (click)="openUpdateDialog(vehicle)">Update</button>
+                <button mat-button color="warn">Delete</button>
+              </mat-action-row>
+            </mat-expansion-panel>
+          </div>
+        </mat-accordion>
+
+        <div class="justify-content-center align-items-center">
+          <section style="margin-top: 30px;">
+            <h3>Add new shipment details?</h3>
+          </section>
+          <section>
+            <div class="row">
+              <div class="col-12">
+                <button class="btn btn-primary" (click)="openDialog()">Add shipment</button>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
-    </section>
-  </div>
-</div>
+    </main>
+
+  </section>
+
+</body>
+</html>
+
+
+
+
+
 
