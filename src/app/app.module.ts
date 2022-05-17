@@ -84,7 +84,7 @@ import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     AgmCoreModule.forRoot({
-      apiKey: "AIzaSyDJmWXOB1GZcINnF_dj8XTF80xGrQUd2Nk"
+      apiKey: "Add your own API key."
     }),
     HttpModule,
     MatInputModule,
