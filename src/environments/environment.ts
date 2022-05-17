@@ -5,14 +5,7 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyBq6CYStD_rJyALL76ERkaJHCzXzoKLDRc",
-    authDomain: "ng-assignment-1.firebaseapp.com",
-    databaseURL: "https://ng-assignment-1-default-rtdb.firebaseio.com",
-    projectId: "ng-assignment-1",
-    storageBucket: "ng-assignment-1.appspot.com",
-    messagingSenderId: "558327106715",
-    appId: "1:558327106715:web:2f297f120621a19b904a3e",
-    measurementId: "G-P4PCFMHW9X"
+    //Your firebase details
   }
 };
 
